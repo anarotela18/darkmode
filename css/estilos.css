@@ -1,0 +1,225 @@
+:root {
+    --negro: #111111;
+    --blanco: #FEFEFE;
+    --grisOscuro: #222222;
+    --grisClaro: #C8C8C8;
+    --grisClaroHover: #ACABAB;
+    --azul: #3E60E9;
+    --azulHover: #254BE6;
+    --sombraDark: 10px 10px 20px rgba(170, 170, 170, .16);
+    --sombraLight: 10px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--blanco);
+    font-family: 'Roboto', sans-serif;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+}
+
+body.dark {
+    background: var(--negro);
+}
+
+a {
+    color: var(--grisOscuro);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contenedor {
+    max-width: 1000px;
+    width: 90%;
+    margin: auto;
+    padding: 50px 0;
+}
+
+nav {
+    background: var(--blanco);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 5px;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    -webkit-box-shadow: var(--sombraDark);
+    box-shadow: var(--sombraDark);
+}
+
+body.dark nav {
+    background: var(--grisOscuro);
+    box-shadow: var(--sombraLight);
+}
+
+nav .logotipo {
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav .enlaces {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+nav .enlaces a {
+    margin-right: 40px;
+}
+
+nav .enlaces a:hover {
+    color: #707070;
+}
+
+body.dark a {
+    color: var(--grisClaro);
+}
+
+body.dark a:hover {
+    color: var(--blanco);
+}
+
+.grid {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 40px 20px;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 40px 0;
+}
+
+.grid .card {
+    background: var(--blanco);
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-box-shadow: --sombraDark;
+    box-shadow: var(--sombraDark);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    position: relative;
+    min-height: 195px;
+    margin-top: 50px;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+}
+
+body.dark .grid .card {
+    background: var(--grisOscuro);
+    box-shadow: var(--sombraLight);
+}
+
+.grid .card img {
+    vertical-align: top;
+    border-radius: 7px;
+    position: absolute;
+    top: -50px;
+    width: calc(100% - 40px);
+    max-height: 165px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.grid .card .botones {
+    width: 100%;
+    margin-top: 20px;
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 20px;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid .card .botones .boton {
+    padding: 10px;
+    color: var(--blanco);
+    width: 100%;
+    display: block;
+    background: var(--negro);
+    text-align: center;
+    border-radius: 5px;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+}
+
+.grid .card .botones .boton.primario {
+    background: var(--azul);
+}
+
+.grid .card .botones .boton.primario:hover {
+    background: var(--azulHover);
+}
+
+.grid .card .botones .boton.secundario {
+    background: var(--grisClaro);
+}
+
+.grid .card .botones .boton.secundario:hover {
+    background: var(--grisClaroHover);
+}
+
+
+/* SWITCH */
+
+.switch {
+    background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+}
+
+.switch::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: var(--blanco);
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
+}
+
+.switch.active {
+    background: orange;
+    color: var(--negro);
+}
+
+.switch.active::after {
+    left: unset;
+    right: 0;
+}
+
+.switch span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: var(--blanco);
+}
